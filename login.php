@@ -85,8 +85,9 @@ session_start();
           </div>
 
 
+          <center><input type="submit" name="login" id="submit" value="Login" class="btn"></center>
 
-          <input type="submit" name="login" id="submit" value="Login" class="button">
+          
 
           <div class="links">
             No tienes una cuenta? <a href="registro.php">Regístrate</a>
