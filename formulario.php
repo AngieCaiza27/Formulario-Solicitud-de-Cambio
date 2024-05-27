@@ -97,7 +97,7 @@ session_start();
                 <div class="rd-navbar-main-element">
                   <div class="rd-navbar-nav-wrap">
                     <ul class="rd-navbar-nav">
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="inicio.php">Volver al nicio</a>
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="inicio.php">Volver al Inicio</a>
                       <li class="rd-nav-item active"><a class="rd-nav-link" href="cerrarSesion.php">Cerrar Sesión</a>
                       </li>
 
@@ -121,7 +121,7 @@ session_start();
   <div class="form-row">
   <div  class="form-group col-md-4">
       <label style="color:#000000;" for="solicitante_del_cambio">Solicitante del cambio</label>
-       <input type="text" class="form-control" id="solicitante_del_cambio" name="solicitante_del_cambio" placeholder="Titulo del cambio">
+       <input type="text" class="form-control" id="solicitante_del_cambio" name="solicitante_del_cambio" placeholder="Nombre del solicitante">
     </div>
     <div class="form-group col-md-4">
       <label style="color:#000000;" for="tipo_de_cambio">Tipo de cambio</label>
@@ -180,15 +180,15 @@ session_start();
  
 </div>
 <div class="form-group">
-  <label style="color:#000000;" for="razon_del_cambio">Razon del cambio</label>
+  <label style="color:#000000;" for="razon_del_cambio">Razón del cambio</label>
   <input type="text" aria-label="First name" class="form-control" id="razon_del_cambio" name="razon_del_cambio">
   </div>
   <div class="form-group">
-    <label style="color:#000000;" for="titulo_del_cambio">Titulo del cambio</label>
-    <input type="text" class="form-control" id="titulo_del_cambio" name="titulo_del_cambio" placeholder="Titulo del cambio">
+    <label style="color:#000000;" for="titulo_del_cambio">Título del cambio</label>
+    <input type="text" class="form-control" id="titulo_del_cambio" name="titulo_del_cambio" placeholder="Título del cambio">
   </div>
   <div class="form-group">
-    <label style="color:#000000;" for="descripcion_del_cambio">Descripcion del cambio</label>
+    <label style="color:#000000;" for="descripcion_del_cambio">Descripción del cambio</label>
   <textarea class="form-control" id="descripcion_del_cambio" name="descripcion_del_cambio" rows="3"></textarea>
   </div>
   <div class="form-row">

@@ -50,6 +50,7 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                 <th scope="col">Tipo de cambio</th>
                 <th scope="col">Fecha Inicio</th>
                 <th scope="col">Fecha Fin</th>
+                <th scope="col">Estado</th>
                 
             </tr>
         </thead>
@@ -62,6 +63,25 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                 <td><?php echo $registros['tipo_de_cambio'];?></td>
                 <td><?php echo $registros['fecha_inicio_del_cambio'];?></td>
                 <td><?php echo $registros['fecha_fin_del_cambio'];?></td>
+
+                <td>
+                <?php
+                if ($registros['estado_cambio'] == "Pendiente") {
+                    // Si el estado es "Pendiente", muestra el texto en amarillo.
+                    echo '<span style="color: darkgoldenrod;">' . $registros['estado_cambio'] . '</span>';
+                }
+                
+                if ($registros['estado_cambio'] == "Aceptado") {
+                    // Si el estado es "Aceptado", muestra el texto en verde.
+                    echo '<span style="color: green;">' . $registros['estado_cambio'] . '</span>';
+                }
+                
+                if ($registros['estado_cambio'] == "Rechazado") {
+                    // Si el estado es "Rechazao", muestra el texto en rojo.
+                    echo '<span style="color: red;">' . $registros['estado_cambio'] . '</span>';
+                } 
+                ?>
+                </td>
                 
 
                 <td>
@@ -72,7 +92,7 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                     class="btn btn-info"
                     href="editar.php?txtID=<?php echo $registros['id']; ?> "
                     role="button"
-                    >Editar</a
+                    >    Ver   </a
                 >
                 
                     |
@@ -95,7 +115,17 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 </div>
 
 
-    
+<style>
+    .estado-pendiente {
+        color: yellow;
+    }
+    .estado-aceptado {
+        color: green;
+    }
+    .estado-rechazado {
+        color: red;
+    }
+</style>
 
 
 <?php include("../../templates/footer.php"); ?>
