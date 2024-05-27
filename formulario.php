@@ -126,10 +126,10 @@ session_start();
     <div class="form-group col-md-4">
                   <label style="color:#000000;" for="tipo_de_cambio ">Tipo de cambio</label>
                   <select class="form-control" id="tipo_de_cambio" name="tipo_de_cambio">
-                    <option value="Pendiente" selected>Estándar</option>
-                    <option value="Aprobado">Normal</option>
-                    <option value="Rechazado">Urgente</option>
-                  </select>
+                  <option value="Estándar">Estándar</option>
+                    <option value="Normal">Normal</option>
+                    <option value="Urgente">Urgente</option>
+                </select>
                 </div>
     </div>
   
@@ -140,11 +140,11 @@ session_start();
     </div>          
     <div class="form-group col-md-4">
                   <label style="color:#000000;" for="urgencia">Urgencia</label>
-                  <select class="form-control" id="urgencia" name="impacto">
-                    <option value="Pendiente" selected>Media</option>
-                    <option value="Aprobado">Alta</option>
-                    <option value="Rechazado">Baja</option>
-                  </select>
+                  <select class="form-control" id="urgencia" name="urgencia">
+                    <option value="media">Media</option>
+                    <option value="alta">Alta</option>
+                    <option value="baja">Baja</option>
+                 </select>
                 
     </div> 
   </div>
@@ -152,21 +152,20 @@ session_start();
   <div class="form-group col-md-4">
                   <label style="color:#000000;" for="prioridad">Prioridad</label>
                   <select class="form-control" id="prioridad" name="prioridad">
-                    <option value="Pendiente" selected>Media</option>
-                    <option value="Aprobado">Alta</option>
-                    <option value="Rechazado">Baja</option>
+                    <option value="Media">Media</option>
+                    <option value="Alta">Alta</option>
+                    <option value="Baja">Baja</option>
                   </select>
                 
     </div> 
     
     <div class="form-group col-md-4">
-                  <label style="color:#000000;" for="prioridad">Riesgo del Cambio</label>
-                  <select class="form-control" id="prioridad" name="prioridad">
-                    <option value="Pendiente" selected>Medio</option>
-                    <option value="Aprobado">Alto</option>
-                    <option value="Rechazado">Bajo</option>
+                  <label style="color:#000000;" for="riesgo_del_cambio">Riesgo del Cambio</label>
+                  <select class="form-control" id="riesgo_del_cambio" name="riesgo_del cambio">
+                    <option value="Medio">Medio</option>
+                    <option value="Alto">Alto</option>
+                    <option value="Bajo">Bajo</option>
                   </select>
-                
     </div>
   </div>
   <div class="form-row">
@@ -217,12 +216,13 @@ session_start();
   </div>
   <div class="form-row">
                 <div class="form-group col-md-4">
-                  <label style="color:#000000;" for="estado_del_cambio">Estado del cambio</label>
-                  <select class="form-control" id="estado_del_cambio" name="estado_del_cambio">
-                    <option value="Pendiente" selected>Pendiente</option>
+                  <label style="color:#000000;" for="estado_cambio">Estado del cambio</label>
+                  <select class="form-control" id="estado_cambio" name="estado_cambio">
+                  <option value="Pendiente">Pendiente</option>
                     <option value="Aprobado">Aprobado</option>
                     <option value="Rechazado">Rechazado</option>
-                  </select>
+                </select>
+        
                 </div>
               </div>
   <br>
@@ -255,9 +255,9 @@ session_start();
     //  $sql = "INSERT INTO formularios (solicitante_del_cambio, tipo_de_cambio, impacto, urgencia, prioridad, riesgo_del_cambio, propietario_del_cambio, responsable_del_cambio, fecha_inicio_del_cambio, fecha_fin_del_cambio, servicios_afectados, razon_del_cambio, titulo_del_cambio, descripcion_del_cambio, aprobador)
     //  VALUES ('$solicitante', '$tipo_cambio', '$impacto', '$urgencia', '$prioridad', '$riesgo', '$propietario', '$responsable', '$fecha_inicio', '$fecha_fin', '$servicios_afectados', '$razon_cambio', '$titulo_cambio', '$descripcion_cambio', '$aprobado_por')";
 
-    $sql = "INSERT INTO formularios (solicitante_del_cambio, tipo_de_cambio, impacto, urgencia, prioridad, riesgo_del_cambio, propietario_del_cambio, responsable_del_cambio, fecha_inicio_del_cambio, fecha_fin_del_cambio, servicios_afectados, razon_del_cambio, titulo_del_cambio, descripcion_del_cambio, aprobador, estado_del_cambio) 
+    $sql = "INSERT INTO formularios (solicitante_del_cambio, tipo_de_cambio, impacto, urgencia, prioridad, riesgo_del_cambio, propietario_del_cambio, responsable_del_cambio, fecha_inicio_del_cambio, fecha_fin_del_cambio, servicios_afectados, razon_del_cambio, titulo_del_cambio, descripcion_del_cambio, aprobador, estado_cambio) 
     VALUES ('$solicitante', '$tipo_cambio', '$impacto', '$urgencia', '$prioridad', '$riesgo', '$propietario', '$responsable', '$fecha_inicio', '$fecha_fin', '$servicios_afectados', '$razon_cambio', '$titulo_cambio', '$descripcion_cambio', '$aprobado_por', '$estado')";
-
+   
 
     // $sql = "INSERT INTO `formularios` (`id`, `user_id`, `titulo`, `solicitante_del_cambio`, `tipo_de_cambio`, `impacto`, `urgencia`, `prioridad`, `riesgo_del_cambio`, `propietario_del_cambio`, `responsable_del_cambio`, `fecha_inicio_del_cambio`, `fecha_fin_del_cambio`, `servicios_afectados`, `razon_del_cambio`, `titulo_del_cambio`, `descripcion_del_cambio`, `aprobador`, `estado_cambio`) 
     // VALUES (NULL, '3', '', 'ye', 'ye', 'ye', 'ye', 'ye', 'ye', 'ye', 'ye', '2024-05-28', '2024-05-29', 'y', 'y', 'y', 'y', 'y', 'Pendiente')";

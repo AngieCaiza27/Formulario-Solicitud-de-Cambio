@@ -71,7 +71,7 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                     echo '<span style="color: darkgoldenrod;">' . $registros['estado_cambio'] . '</span>';
                 }
                 
-                if ($registros['estado_cambio'] == "Aceptado") {
+                if ($registros['estado_cambio'] == "Aprobado") {
                     // Si el estado es "Aceptado", muestra el texto en verde.
                     echo '<span style="color: green;">' . $registros['estado_cambio'] . '</span>';
                 }

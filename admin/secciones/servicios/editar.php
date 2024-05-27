@@ -36,7 +36,7 @@ if (isset($_GET['txtID'])) {
 
 if ($_POST) {
     if (isset($_POST['btnAceptar'])) {
-        $estado = "Aceptado";
+        $estado = "Aprobado";
     } elseif (isset($_POST['btnRechazar'])) {
         $estado = "Rechazado";
     } elseif (isset($_POST['btnPendiente'])) {
