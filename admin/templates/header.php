@@ -1,5 +1,5 @@
 <?php
-$url_base="http://localhost/dashboard/admin/";
+$url_base="http://localhost/FORMULARIO-SOLICITUD-DE-CAMBIO/admin/";
 ?>
 
 <!doctype html>

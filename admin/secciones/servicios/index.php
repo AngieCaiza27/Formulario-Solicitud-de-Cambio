@@ -1,26 +1,26 @@
 <?php 
 include("../../templates/header.php"); 
-include("../../bd.php");
+include("../../../conexion.php");
 
 if (isset($_GET['txtID'])) {
     //echo $_GET['txtID'];
 
     $txtID=(isset($_GET['txtID']) )?$_GET['txtID']:"";
 
-    $sentencia=$conexion->prepare("DELETE FROM tbl_servicios WHERE id=:id ");
+    $sentencia=$conn->prepare("DELETE FROM formularios WHERE id=:id ");
 
     $sentencia->bindParam(":id",$txtID);
     $sentencia->execute();
 }
 
-$sentencia=$conexion->prepare("SELECT * FROM `tbl_servicios`");
+$sentencia=$conn->prepare("SELECT * FROM `formularios`");
 $sentencia->execute();
 $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 
 
 ?>
 
-
+ 
 
 <div class="card">
     <div class="card-header">
@@ -45,19 +45,24 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
         <thead>
             <tr>
                 <th scope="col">ID</th>
-                <th scope="col">Iconos</th>
-                <th scope="col">Título</th>
-                <th scope="col">Descripción</th>
-                <th scope="col">Acción</th>
+                <th scope="col">Titulo del Cambio</th>
+                <th scope="col">Solicitante</th>
+                <th scope="col">Tipo de cambio</th>
+                <th scope="col">Fecha Inicio</th>
+                <th scope="col">Fecha Fin</th>
+                
             </tr>
         </thead>
         <tbody>
             <?php foreach($lista_servicios as $registros) {?>
             <tr class="">
-                <td><?php echo $registros['ID'];?></td>
-                <td><?php echo $registros['icono'];?></td>
-                <td><?php echo $registros['titulo'];?></td>
-                <td><?php echo $registros['descripcion'];?></td>
+                <td><?php echo $registros['id'];?></td>
+                <td><?php echo $registros['titulo_del_cambio'];?></td>
+                <td><?php echo $registros['solicitante_del_cambio'];?></td>
+                <td><?php echo $registros['tipo_de_cambio'];?></td>
+                <td><?php echo $registros['fecha_inicio_del_cambio'];?></td>
+                <td><?php echo $registros['fecha_fin_del_cambio'];?></td>
+                
 
                 <td>
 
@@ -65,7 +70,7 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                     name=""
                     id=""
                     class="btn btn-info"
-                    href="editar.php?txtID=<?php echo $registros['ID']; ?> "
+                    href="editar.php?txtID=<?php echo $registros['id']; ?> "
                     role="button"
                     >Editar</a
                 >
@@ -76,13 +81,13 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                     name=""
                     id=""
                     class="btn btn-danger"
-                    href="index.php?txtID=<?php echo $registros['ID']; ?> "
+                    href="index.php?txtID=<?php echo $registros['id']; ?> "
                     role="button"
                     >Eliminar</a
                 >
                 
-                
-                </td>
+
+               
             </tr>
             <?php } ?>
         </tbody>

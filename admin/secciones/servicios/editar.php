@@ -1,6 +1,6 @@
 <?php 
 
-include("../../bd.php");
+include("../../../conexion.php");
 include("../../templates/header.php"); 
 
 if (isset($_GET['txtID'])) {
@@ -8,14 +8,20 @@ if (isset($_GET['txtID'])) {
 
     $txtID=(isset($_GET['txtID']) )?$_GET['txtID']:"";
 
-    $sentencia=$conexion->prepare("SELECT * FROM tbl_servicios WHERE id=:id ");
+    $sentencia=$conn->prepare("SELECT * FROM formularios WHERE id=:id ");
     $sentencia->bindParam(":id",$txtID);
     $sentencia->execute();
     $registro=$sentencia->fetch(PDO::FETCH_LAZY);
 
-    $icono=$registro['icono'];
-    $titulo=$registro['titulo'];
-    $descripcion=$registro['descripcion'];
+    $icono=$registro['titulo_del_cambio'];
+    $titulo=$registro['solicitante_del_cambio'];
+    $descripcion=$registro['tipo_de_cambio'];
+    $propietario=$registro['propietario_del_cambio'];
+    $reponsable=$registro['responsable_del_cambio'];
+    $serviciocambio=$registro['servicios_afectados'];
+    $razon=$registro['razon_del_cambio'];
+    $descambio=$registro['descripcion_del_cambio'];
+    $aprobador=$registro['aprobador'];
 }
 
 if($_POST){
@@ -25,15 +31,30 @@ if($_POST){
     $icono=(isset($_POST['icono']))?$_POST['icono']:"";
     $titulo=(isset($_POST['titulo']))?$_POST['titulo']:"";
     $descripcion=(isset($_POST['descripcion']))?$_POST['descripcion']:"";
+    $propietario=(isset($_POST['propietario']))?$_POST['propietario']:"";
+    $reponsable=(isset($_POST['responsable']))?$_POST['responsable']:"";
+    $serviciocambio=(isset($_POST['serviciocambio']))?$_POST['serviciocambio']:"";
+    $razon=(isset($_POST['razon']))?$_POST['razon']:"";
+    $descambio=(isset($_POST['descambio']))?$_POST['descambio']:"";
+    $aprobador=(isset($_POST['aprobador']))?$_POST['aprobador']:"";
+
     
-    $sentencia=$conexion->prepare("UPDATE tbl_servicios 
+    $sentencia=$conexion->prepare("UPDATE formularios 
     SET 
-    icono=:icono,
+    =:icono,
     titulo=:titulo,
     descripcion=:descripcion
-    WHERE id=:id ");
+    propietario=:propietario
+    responsable=:responsable
+    serviciocambio=:serviciocambio
+    razon=:razon
+    descambio=:descambio
+    aprobador=:aprobador
 
-    $sentencia->bindParam(":icono",$icono);
+    WHERE id=:id ");
+    $sentencia->bindParam(":titulo_del_cambio",$responsable);
+    $sentencia->bindParam(":titulo_del_cambio",$propietario);
+    $sentencia->bindParam(":titulo_del_cambio",$icono);
     $sentencia->bindParam(":titulo",$titulo);
     $sentencia->bindParam(":descripcion",$descripcion);
     $sentencia->bindParam(":id",$txtID);
@@ -67,7 +88,7 @@ if($_POST){
 
 
 <div class="mb-3">
-    <label for="icono" class="form-label">Icono</label>
+    <label for="icono" class="form-label">Titulo del cambio</label>
     <input
         value="<?php echo $icono;?>"
         type="text"
@@ -80,7 +101,7 @@ if($_POST){
 </div>
 
 <div class="mb-3">
-    <label for="titulo" class="form-label">Título:</label>
+    <label for="titulo" class="form-label">Solicitante:</label>
     <input
         value="<?php echo $titulo;?>"
         type="text"
@@ -93,7 +114,7 @@ if($_POST){
 </div>
 
 <div class="mb-3">
-    <label for="descripcion" class="form-label">Descripción:</label>
+    <label for="descripcion" class="form-label">Tipo de Cambio:</label>
     <input
         value="<?php echo $descripcion;?>"
         type="text"
@@ -105,7 +126,31 @@ if($_POST){
     />
 </div>
 
+<div class="mb-3">
+    <label for="propietario" class="form-label">Tipo de Propietario:</label>
+    <input
+        value="<?php echo $propietario;?>"
+        type="text"
+        class="form-control"
+        name="propietario"
+        id="propietario"
+        aria-describedby="helpId"
+        placeholder="Descripción"
+    />
+</div>
 
+<div class="mb-3">
+    <label for="responsable" class="form-label">Responsable:</label>
+    <input
+        value="<?php echo $reponsable;?>"
+        type="text"
+        class="form-control"
+        name="responsable"
+        id="responsable"
+        aria-describedby="helpId"
+        placeholder="Descripción"
+    />
+</div>
 <button
     type="submit"
     class="btn btn-success"
