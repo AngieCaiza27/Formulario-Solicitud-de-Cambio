@@ -5,7 +5,7 @@ $username = "root";
 $password = "";
 $db = "bdFormulario";
 
-//$conn = new PDO("mysql:host=$server;dbname=$db",$username,$password);
+$conn2 = new PDO("mysql:host=$server;dbname=$db",$username,$password);
 $conn = new mysqli($server, $username, $password, $db);
 
 // try{

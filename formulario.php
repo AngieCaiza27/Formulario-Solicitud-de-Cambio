@@ -219,8 +219,16 @@ session_start();
         $descripcion_cambio = $_POST['descripcion_del_cambio'];
         $aprobado_por = $_POST['aprobador'];
 
-    $sql = "INSERT INTO formularios (solicitante_del_cambio, tipo_de_cambio, impacto, urgencia, prioridad, riesgo_del_cambio, propietario_del_cambio, responsable_del_cambio, fecha_inicio_del_cambio, fecha_fin_del_cambio, servicios_afectados, razon_del_cambio, titulo_del_cambio, descripcion_del_cambio, aprobador)
-    VALUES ('$solicitante', '$tipo_cambio', '$impacto', '$urgencia', '$prioridad', '$riesgo', '$propietario', '$responsable', '$fecha_inicio', '$fecha_fin', '$servicios_afectados', '$razon_cambio', '$titulo_cambio', '$descripcion_cambio', '$aprobado_por')";
+    //  $sql = "INSERT INTO formularios (solicitante_del_cambio, tipo_de_cambio, impacto, urgencia, prioridad, riesgo_del_cambio, propietario_del_cambio, responsable_del_cambio, fecha_inicio_del_cambio, fecha_fin_del_cambio, servicios_afectados, razon_del_cambio, titulo_del_cambio, descripcion_del_cambio, aprobador)
+    //  VALUES ('$solicitante', '$tipo_cambio', '$impacto', '$urgencia', '$prioridad', '$riesgo', '$propietario', '$responsable', '$fecha_inicio', '$fecha_fin', '$servicios_afectados', '$razon_cambio', '$titulo_cambio', '$descripcion_cambio', '$aprobado_por')";
+
+      $sql = "INSERT INTO formularios (id, user_id, titulo, solicitante_del_cambio, tipo_de_cambio, impacto, urgencia, prioridad, riesgo_del_cambio, propietario_del_cambio, responsable_del_cambio, fecha_inicio_del_cambio, fecha_fin_del_cambio, servicios_afectados, razon_del_cambio, titulo_del_cambio, descripcion_del_cambio, aprobador, estado_cambio) 
+      VALUES (NULL, '3', 'cambio', '$solicitante', '$tipo_cambio', '$impacto', '$urgencia', '$prioridad', '$riesgo', '$propietario', '$responsable', '$fecha_inicio', '$fecha_fin', '$servicios_afectados', '$razon_cambio', '$titulo_cambio', '$descripcion_cambio', '$aprobado_por', 'Pendiente')";
+
+
+    // $sql = "INSERT INTO `formularios` (`id`, `user_id`, `titulo`, `solicitante_del_cambio`, `tipo_de_cambio`, `impacto`, `urgencia`, `prioridad`, `riesgo_del_cambio`, `propietario_del_cambio`, `responsable_del_cambio`, `fecha_inicio_del_cambio`, `fecha_fin_del_cambio`, `servicios_afectados`, `razon_del_cambio`, `titulo_del_cambio`, `descripcion_del_cambio`, `aprobador`, `estado_cambio`) 
+    // VALUES (NULL, '3', '', 'ye', 'ye', 'ye', 'ye', 'ye', 'ye', 'ye', 'ye', '2024-05-28', '2024-05-29', 'y', 'y', 'y', 'y', 'y', 'Pendiente')";
+
 
     $resultado = mysqli_query($conn, $sql);
     if ($resultado){

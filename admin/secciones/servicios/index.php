@@ -7,13 +7,13 @@ if (isset($_GET['txtID'])) {
 
     $txtID=(isset($_GET['txtID']) )?$_GET['txtID']:"";
 
-    $sentencia=$conn->prepare("DELETE FROM formularios WHERE id=:id ");
+    $sentencia=$conn2->prepare("DELETE FROM formularios WHERE id=:id ");
 
     $sentencia->bindParam(":id",$txtID);
     $sentencia->execute();
 }
 
-$sentencia=$conn->prepare("SELECT * FROM `formularios`");
+$sentencia=$conn2->prepare("SELECT * FROM `formularios`");
 $sentencia->execute();
 $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 

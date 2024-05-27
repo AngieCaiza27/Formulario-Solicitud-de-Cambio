@@ -40,7 +40,7 @@ session_start();
             
 
             if ($row['rol'] == 'admin') {
-              header("Location: tabla.php");
+              header("Location: ./admin/index.php");
             } else {
               header("Location: inicio.php");
             }

@@ -8,7 +8,7 @@ if (isset($_GET['txtID'])) {
 
     $txtID=(isset($_GET['txtID']) )?$_GET['txtID']:"";
 
-    $sentencia=$conn->prepare("SELECT * FROM formularios WHERE id=:id ");
+    $sentencia=$conn2->prepare("SELECT * FROM formularios WHERE id=:id ");
     $sentencia->bindParam(":id",$txtID);
     $sentencia->execute();
     $registro=$sentencia->fetch(PDO::FETCH_LAZY);
