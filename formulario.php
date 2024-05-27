@@ -43,7 +43,7 @@ session_start();
                 'solicitante_del_cambio', 'tipo_de_cambio', 'impacto', 'urgencia', 'prioridad', 
                 'riesgo_del_cambio', 'propietario_del_cambio', 'responsable_del_cambio', 
                 'fecha_inicio_del_cambio', 'fecha_fin_del_cambio', 'servicios_afectados', 
-                'razon_del_cambio', 'titulo_del_cambio', 'descripcion_del_cambio', 'aprobador'
+                'razon_del_cambio', 'titulo_del_cambio', 'descripcion_del_cambio', 'aprobador','estado_cambio'
             ];
 
             fields.forEach(function(field) {
@@ -124,40 +124,60 @@ session_start();
        <input type="text" class="form-control" id="solicitante_del_cambio" name="solicitante_del_cambio" placeholder="Nombre del solicitante">
     </div>
     <div class="form-group col-md-4">
-      <label style="color:#000000;" for="tipo_de_cambio">Tipo de cambio</label>
-      <input type="text" class="form-control" id="tipo_de_cambio" name="tipo_de_cambio" placeholder="Tipo de cambio">
+                  <label style="color:#000000;" for="tipo_de_cambio ">Tipo de cambio</label>
+                  <select class="form-control" id="tipo_de_cambio" name="tipo_de_cambio">
+                    <option value="Pendiente" selected>Estándar</option>
+                    <option value="Aprobado">Normal</option>
+                    <option value="Rechazado">Urgente</option>
+                  </select>
+                </div>
     </div>
-  </div>
+  
   <div class="form-row">
   <div class="form-group col-md-4">
       <label style="color:#000000;" for="impacto">Impacto</label>
-      <input type="text" class="form-control" id="impacto" name="impacto" placeholder="Impacto">
-    </div>
+      <input type="text" class="form-control" id="impacto" name="impacto" placeholder="Afecta al Servidor">
+    </div>          
     <div class="form-group col-md-4">
-      <label style="color:#000000;" for="urgencia">Urgencia</label>
-      <input type="text" class="form-control" id="urgencia" name="urgencia" placeholder="urgencia">
-    </div>
+                  <label style="color:#000000;" for="urgencia">Urgencia</label>
+                  <select class="form-control" id="urgencia" name="impacto">
+                    <option value="Pendiente" selected>Media</option>
+                    <option value="Aprobado">Alta</option>
+                    <option value="Rechazado">Baja</option>
+                  </select>
+                
+    </div> 
   </div>
   <div class="form-row">
   <div class="form-group col-md-4">
-      <label  style="color:#000000;" for="prioridad">Prioridad</label>
-      <input type="text" class="form-control" id="prioridad" name="prioridad" placeholder="Prioridad">
-    </div>
+                  <label style="color:#000000;" for="prioridad">Prioridad</label>
+                  <select class="form-control" id="prioridad" name="prioridad">
+                    <option value="Pendiente" selected>Media</option>
+                    <option value="Aprobado">Alta</option>
+                    <option value="Rechazado">Baja</option>
+                  </select>
+                
+    </div> 
     
     <div class="form-group col-md-4">
-      <label style="color:#000000;" for="riesgo_del_cambio">Riesgo del cambio</label>
-      <input type="text" class="form-control" id="riesgo_del_cambio" name="riesgo_del_cambio" placeholder="Riesgo del cambio">
+                  <label style="color:#000000;" for="prioridad">Riesgo del Cambio</label>
+                  <select class="form-control" id="prioridad" name="prioridad">
+                    <option value="Pendiente" selected>Medio</option>
+                    <option value="Aprobado">Alto</option>
+                    <option value="Rechazado">Bajo</option>
+                  </select>
+                
     </div>
   </div>
   <div class="form-row">
   <div class="form-group col-md-4">
       <label style="color:#000000;" for="propietario_del_cambio">Propietario del Cambio</label>
-      <input type="text" class="form-control" id="propietario_del_cambio" name="propietario_del_cambio" placeholder="Propietario del cambio">
+      <input type="text" class="form-control" id="propietario_del_cambio" name="propietario_del_cambio" placeholder="Nombre propietario del cambio">
     </div>
     
     <div class="form-group col-md-4">
       <label style="color:#000000;" for="responsable_del_cambio">Responsable del cambio</label>
-      <input type="text" class="form-control" id="responsable_del_cambio" name="responsable_del_cambio" placeholder="Responsable del cambio">
+      <input type="text" class="form-control" id="responsable_del_cambio" name="responsable_del_cambio" placeholder="Nombre responsable del cambio">
     </div>
   </div>
   <div class="form-group"style="height: 0px;clear: both;" required>
@@ -176,7 +196,7 @@ session_start();
                 <div class="form-group">
                 <label style="color:#000000;" for="servicios_afectados">Servicios afectados</label>
               
-  <input type="text" aria-label="First name" class="form-control" id="servicios_afectados" name="servicios_afectados">
+  <input type="text" aria-label="First name" class="form-control" id="servicios_afectados" name="servicios_afectados" placeholder="Base de Datos">
  
 </div>
 <div class="form-group">
@@ -195,13 +215,25 @@ session_start();
   <label style="color:#000000;" for="aprobador">Aprobado por:</label>
   <input type="text" class="form-control" id="aprobador" name="aprobador" placeholder="Aprobado por:">
   </div>
+  <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label style="color:#000000;" for="estado_del_cambio">Estado del cambio</label>
+                  <select class="form-control" id="estado_del_cambio" name="estado_del_cambio">
+                    <option value="Pendiente" selected>Pendiente</option>
+                    <option value="Aprobado">Aprobado</option>
+                    <option value="Rechazado">Rechazado</option>
+                  </select>
+                </div>
+              </div>
   <br>
   <button type="button" class="btn btn-primary" onclick="window.location.href='inicio.php';">Volver al inicio</button>
-  <button type="submit" class="btn btn-primary" name="guardar" >Guardar</button>
+  <button type="submit" class="btn btn-primary" name="guardar" >Enviar</button>
   <?php
+
+      session_start();
       include "conexion.php";
 
-      if (isset($_POST['guardar'])) {
+      if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $solicitante = $_POST['solicitante_del_cambio'];
         $tipo_cambio = $_POST['tipo_de_cambio'];
@@ -218,12 +250,13 @@ session_start();
         $titulo_cambio = $_POST['titulo_del_cambio'];
         $descripcion_cambio = $_POST['descripcion_del_cambio'];
         $aprobado_por = $_POST['aprobador'];
+        $estado = $_POST['estado_cambio'];
 
     //  $sql = "INSERT INTO formularios (solicitante_del_cambio, tipo_de_cambio, impacto, urgencia, prioridad, riesgo_del_cambio, propietario_del_cambio, responsable_del_cambio, fecha_inicio_del_cambio, fecha_fin_del_cambio, servicios_afectados, razon_del_cambio, titulo_del_cambio, descripcion_del_cambio, aprobador)
     //  VALUES ('$solicitante', '$tipo_cambio', '$impacto', '$urgencia', '$prioridad', '$riesgo', '$propietario', '$responsable', '$fecha_inicio', '$fecha_fin', '$servicios_afectados', '$razon_cambio', '$titulo_cambio', '$descripcion_cambio', '$aprobado_por')";
 
-      $sql = "INSERT INTO formularios (id, user_id, titulo, solicitante_del_cambio, tipo_de_cambio, impacto, urgencia, prioridad, riesgo_del_cambio, propietario_del_cambio, responsable_del_cambio, fecha_inicio_del_cambio, fecha_fin_del_cambio, servicios_afectados, razon_del_cambio, titulo_del_cambio, descripcion_del_cambio, aprobador, estado_cambio) 
-      VALUES (NULL, '3', 'cambio', '$solicitante', '$tipo_cambio', '$impacto', '$urgencia', '$prioridad', '$riesgo', '$propietario', '$responsable', '$fecha_inicio', '$fecha_fin', '$servicios_afectados', '$razon_cambio', '$titulo_cambio', '$descripcion_cambio', '$aprobado_por', 'Pendiente')";
+    $sql = "INSERT INTO formularios (solicitante_del_cambio, tipo_de_cambio, impacto, urgencia, prioridad, riesgo_del_cambio, propietario_del_cambio, responsable_del_cambio, fecha_inicio_del_cambio, fecha_fin_del_cambio, servicios_afectados, razon_del_cambio, titulo_del_cambio, descripcion_del_cambio, aprobador, estado_del_cambio) 
+    VALUES ('$solicitante', '$tipo_cambio', '$impacto', '$urgencia', '$prioridad', '$riesgo', '$propietario', '$responsable', '$fecha_inicio', '$fecha_fin', '$servicios_afectados', '$razon_cambio', '$titulo_cambio', '$descripcion_cambio', '$aprobado_por', '$estado')";
 
 
     // $sql = "INSERT INTO `formularios` (`id`, `user_id`, `titulo`, `solicitante_del_cambio`, `tipo_de_cambio`, `impacto`, `urgencia`, `prioridad`, `riesgo_del_cambio`, `propietario_del_cambio`, `responsable_del_cambio`, `fecha_inicio_del_cambio`, `fecha_fin_del_cambio`, `servicios_afectados`, `razon_del_cambio`, `titulo_del_cambio`, `descripcion_del_cambio`, `aprobador`, `estado_cambio`) 
@@ -231,13 +264,13 @@ session_start();
 
 
     $resultado = mysqli_query($conn, $sql);
-    if ($resultado){
-      ?>
-        <h3 class="ok">Formulario creado correctamente</h3>
-        <?php
-    } 
-}
 
+    if ($resultado) {
+        echo "Formulario Enviado Correctamente ";
+    } else {
+        echo "<h3 class='error'>Error al enviar el formulario: " . mysqli_error($conn) . "</h3>";
+    }
+}
         ?>
 </form>
         </div>

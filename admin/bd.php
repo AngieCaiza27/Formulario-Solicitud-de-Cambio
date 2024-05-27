@@ -1,7 +1,7 @@
 <?php
 
 $servidor="localhost";
-$baseDeDatos="formulario";
+$baseDeDatos="bdFormulario";
 $usuario="root";
 $contrasenia="";
 

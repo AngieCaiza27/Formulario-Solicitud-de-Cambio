@@ -1,5 +1,5 @@
 <?php
-$url_base="http://localhost/FORMULARIO-SOLICITUD-DE-CAMBIO/admin/";
+$url_base="http://localhost/FORMULARIO-SOLICITUD-DE-CAMBIO/";
 ?>
 
 <!doctype html>
@@ -30,12 +30,8 @@ $url_base="http://localhost/FORMULARIO-SOLICITUD-DE-CAMBIO/admin/";
                 <a class="nav-item nav-link active" href="#" aria-current="page"
                     >Administrador del sitio web<span class="visually-hidden">(current)</span></a
                 >
-                <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/servicios">Servicios</a>
-                <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/portafolio">Portafolio</a>
-                <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/entradas">Entradas</a>
-                <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/equipo">Equipo</a>
-                <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/configuraciones">Configuraciones</a>
-                <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/usuarios">Usuarios</a>
+                <a class="nav-item nav-link" href="<?php echo $url_base;?>admin/secciones/servicios">Formularios</a>
+
                 <a class="nav-item nav-link" href="<?php echo $url_base;?>login.php">Cerrar sesión</a>
 
             </div>
