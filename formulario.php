@@ -98,8 +98,9 @@ session_start();
                   <div class="rd-navbar-nav-wrap">
                     <ul class="rd-navbar-nav">
                       <li class="rd-nav-item active"><a class="rd-nav-link" href="inicio.php">Volver al nicio</a>
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="cerrarSesion.php">Cerrar Sesión</a>
                       </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="#contacto">Contacto</a>
+
                       </li>
                     </ul>
                   </div>
@@ -242,23 +243,10 @@ session_start();
                 <h6 style="color: #FFFFFF">Facultad de Ingeniería en Sistemas, Electrónica e Industrial</h6><br/>
                 <h6 style="color: #FFFFFF">Manejo y Configuracion DE software</h6><br/>
               </div>
-              <div class="col-lg-6 col-sm-6 wow fadeInUp">
-                <p class="footer-classic-title">INFORMACIÓN DE CONTACTO</p>
-                <h5 style="color:#FFFFFF;" class="brand-logo-dark">Avda. Los Chasquis entre Río Payamino y Río Guayllabamba<span class="d-lg-block">Campus Huachi, , Ambato - Ecuador</span><h5><br/>
-                <h5 style="color:#FFFFFF;" class="brand-logo-dark"><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-envelope" > jlopez5560@uta.edu.ec</a><h5><br/>
-              </div>
+              
             </div>
           </div>
-          <div class="container wow fadeInUp" data-wow-delay=".4s">
-            <div class="footer-classic-aside">
-              <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span>.Manejo y Configuracion de software</p>
-              <ul class="social-links">
-                <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-twitter" href="https://twitter.com/UTecnicaAmbato?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"></a></li>
-                <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-facebook" href="https://www.facebook.com/UniversidadTecnicadeAmbatoOficial/"></a></li>
-                <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-instagram" href="https://www.instagram.com/utecnicaambato/"></a></li>
-              </ul>
-            </div>
-          </div>
+          
         </section>
       </footer>
     </div>

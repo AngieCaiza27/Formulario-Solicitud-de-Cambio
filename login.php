@@ -36,7 +36,15 @@ session_start();
           if ($pass==$password) {
             $_SESSION['id'] = $row['id'];
             $_SESSION['username'] = $row['username'];
-            header("location: tabla.php");
+            $_SESSION['rol'] = $row['rol'];
+            
+
+            if ($row['rol'] == 'admin') {
+              header("Location: tabla.php");
+            } else {
+              header("Location: inicio.php");
+            }
+            exit();
 
 
           } else {
@@ -98,6 +106,9 @@ session_start();
       <?php
       }
       ?>
+
+
+
   </div>
   <script>
     const toggle = document.querySelector(".toggle"),
